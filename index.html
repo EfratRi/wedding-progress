@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8" />
+  <title>100% התרגשות - החתונה</title>
+  <style>
+    body {
+      background-color: #e0e0e0;
+      font-family: "Segoe UI", sans-serif;
+      direction: rtl;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .copy-window {
+      width: 500px;
+      background-color: #ffffff;
+      border: 1px solid #888;
+      box-shadow: 0 0 10px #999;
+      border-radius: 6px;
+      padding: 20px;
+      position: relative;
+    }
+
+    .window-controls {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .window-controls button {
+      background: none;
+      border: none;
+      color: black;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+    }
+
+    .title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .details {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .name {
+      color: #0066cc;
+      font-weight: bold;
+    }
+
+    .hearts {
+      font-size: 20px;
+      color: green;
+      margin-bottom: 10px;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 25px;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #4caf50 25%, #a5d6a7 50%, #4caf50 75%);
+      background-size: 300px 100%;
+      animation: shimmer 1s infinite linear;
+      width: 0%;
+      transition: width 1s ease;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -300px 0;
+      }
+      100% {
+        background-position: 300px 0;
+      }
+    }
+
+    .info-block {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .blue-text {
+      color: #111212;
+      font-weight: bold;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 5px 12px;
+      font-size: 14px;
+      border: 1px solid #aaa;
+      background-color: #e7e7e7;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    .side-text {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-weight: 600;
+      font-size: 16px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #2e7d32;
+      background: rgba(200, 230, 201, 0.85);
+      padding: 10px 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(46, 125, 50, 0.4);
+      user-select: none;
+      z-index: 1000;
+      letter-spacing: 0.05em;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .side-text:hover {
+      background-color: rgba(165, 214, 167, 1);
+    }
+  </style>
+</head>
+<body>
+
+<!-- טקסט צדדי להפעלת הקונפטי -->
+<div class="side-text">איתך בהתרגשות :)</div>
+
+<!-- חלונית העתקת הקובץ -->
+<div class="copy-window">
+  <div class="window-controls">
+    <button aria-label="מינוס">−</button>
+    <button aria-label="חלון">🗔</button>
+    <button aria-label="איקס">×</button>
+  </div>
+
+  <div class="title" id="titleText">100% התרגשות</div>
+  <div class="details">
+    מעביר <span id="daysLeft">0</span> יום מ-
+    <span class="name">ריסמק</span> אל
+    <span class="name">קנר</span>
+  </div>
+  <div class="hearts">💚💚💚</div>
+
+  <div class="progress-bar-container">
+    <div class="progress-bar-fill" id="progressBar"></div>
+  </div>
+
+  <div class="info-block">
+    <div><strong>שם:</strong> ה-ח-ת-ו-נ-ה!!!</div>
+    <div><strong>זמן שנותר:</strong> <span class="blue-text" id="daysRemaining">0</span> ימים...</div>
+    <div><strong>פריטים שנותרו:</strong> 1 (1 בית נאמן בישראל)</div>
+  </div>
+
+  <div class="button-row">
+    <button onclick="alert('אי אפשר לבטל אהבת אמת 😄')">ביטול</button>
+  </div>
+</div>
+
+<!-- קרדיט -->
+<!-- <div style="
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  font-size: 13px;
+  color: #4caf50;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0.7;">
+  © נוצר באהבה על ידי <a href="https://github.com/MiriamEtel" target="_blank" style="color:#4caf50; text-decoration:none;">miri9760869@gmail.com</a>
+</div> -->
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  document.querySelector('.side-text').addEventListener('click', () => {
+    confetti({
+      particleCount: 250,
+      spread: 100,
+      origin: { y: 0.6 },
+      colors: ['#ff69b4', '#ffb6c1', '#ffd700', '#ffffff', '#00ced1', '#ba55d3']
+    });
+  });
+
+  const weddingDate = new Date("2025-10-27T19:00:00");
+  const startDate = new Date("2025-09-26T00:00:00");
+
+  function updateProgress() {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+
+    const totalDuration = weddingDate - startDate;
+    const timePassed = now - startDate;
+    const daysRemaining = Math.max(0, Math.ceil((weddingDate - now) / (1000 * 60 * 60 * 24)) - 1);
+
+    const progress = Math.min((timePassed / totalDuration) * 100, 100);
+    document.getElementById("progressBar").style.width = progress + "%";
+    document.getElementById("daysLeft").textContent = daysRemaining;
+    document.getElementById("daysRemaining").textContent = daysRemaining;
+    document.getElementById("titleText").textContent = "100% התרגשות";
+  }
+
+  updateProgress();
+  setInterval(updateProgress, 60000);
+</script>
+
+</body>
+</html>
